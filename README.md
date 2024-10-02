@@ -33,30 +33,28 @@ Stop the Codespace under `code`
 ## The Task
 I'm looking to purchase some items and have them delivered in time for the next meteor shower this year so I can see all of the shooting stars! However, as I navigate the application, I am noticing that special deals are not being applied to select items, and I am not getting the correct total as I go to complete my purchase. I want to use New Relic and view the data that is coming in from the application so I can fix the bugs and have my order shipped.
 
-![Astro Shop App Homepage](screenshots/astroshop.png)
-
 ### Step 1: Add items
 Choose any 2 items from the Astro Shop and add them to your cart. For your second item, add multiple quantities of the items.
-![Astro Shop Cart with two items](screenshots/step1.png)
+![Astro Shop Cart with two items](screenshot1.png)
 ### Step 2: Add item from an ad
 Scroll to the bottom of an item's information page, you should see an ad for a discount off of one item. Click on the ad and then add that item to your cart.
-![Astro Shop Ad](screenshots/step3.png)
+![Astro Shop Ad](screenshot2.png)
 ### Step 3: Proceed to checkout
 Feel free to enter whatever shipping information you want, or keep what's there. Enter the following card information under Payment Method:
 - Credit Card Number: 4432-8015-6152-0453
 - Expiration Date: January 2028
 - Security Code: 060
 
-![Checkout Page Payment Area](screenshots/step2.png)
+![Checkout Page Payment Area](screenshot3.png)
 
 ### Step 4: Click on Place Order
-![Place order button](screenshots/step4.png)
+![Place order button](screenshot4.png)
 
 This is the page that I should see after I click the Place order button.
 
 ### Step 5: Check your New Relic account
  In your New Relic account, you should see a list of 19 services with `opentelemetry` listed as the provider. This is how you know you've instrumented your application with New Relic correctly.
-![Services list](screenshots/services.png)
+![Services list](screenshot5.png)
 
 If you don't see this data appear in your New Relic account within a few minutes, review the setup instructions.
 
