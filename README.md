@@ -17,10 +17,53 @@ Today we'll be using the OpenTelemetry Astro Shop app to learn about the core pi
 - If you're not currently registered as a GitHub Education student, please go [here](https://education.github.com/pack) to sign up. Once you've been successfully verified as a student, you'll be able to follow the steps above to receive the New Relic for Students Benefits.
 
 ### Fork this repository! (Please do not clone)
+- Fork [this](https://github.com/ritarenee15/otel-astro-shop-render) repository
 - Click on `Code`, then `Create Codespace on main`
+
+### Add Code for New Relic Instrumentation
+Paste the following into `otel-config-extras.yml`
+```
+# Copyright The OpenTelemetry Authors
+# SPDX-License-Identifier: Apache-2.0
+
+# extra settings to be merged into OpenTelemetry Collector configuration
+# do not delete this file
+
+## Example configuration for sending data to your own OTLP HTTP backend
+## Note: the spanmetrics exporter must be included in the exporters array
+## if overriding the traces pipeline.
+##
+#  exporters:
+#    otlphttp/example:
+#      endpoint: <your-endpoint-url>
+#
+#  service:
+#    pipelines:
+#      traces:
+#        exporters: [spanmetrics, otlphttp/example]
+exporters:
+  otlp/newrelic:
+    endpoint: https://otlp.nr-data.net:4317
+    headers:
+      api-key: #Your NR License Key Here
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/newrelic]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/newrelic]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/newrelic]
+```
 ### Add your New Relic license key to your application
-- In your New Relic account, click on your name, then click on API Keys
-- Under Type, find the key that says `INGEST - LICENSE`, click on the three dots at the end of the row, and click `Copy key`
+- In your New Relic account, create a new `Ingest - License` key and copy the key above your key list.
 - Paste your New Relic license key in the `otel-config-extras.yml` file under `exporters: api key`
 
 You're ready to run your application!
