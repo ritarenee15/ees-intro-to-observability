@@ -9,7 +9,7 @@ We'll be viewing the data we receive from the Astro Shop application today on Ne
 ## About OpenTelemetry
 OpenTelemetry is an open source framework that's helping us rethink observability at the instrumentation level, by standardizing how our application data is generated, collected, and shipped.
 
-Today we'll be using the OpenTelemetry Astro Shop app to learn about the core pillars of observability. To learn more about OpenTelemetry, check out Reese Lee's workshop, _What's Wrong With My App?: Using OpenTelemetry To Observe Your Code_ on June 14th at 10am.
+Today we'll be using the OpenTelemetry Astro Shop app to learn about the core pillars of observability.
 
 ## Setup Instructions
 ### First, create your free New Relic account [here](https://newrelic.com/signup).
